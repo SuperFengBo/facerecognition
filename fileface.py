@@ -41,7 +41,6 @@ while(n < 23):
         print('imgpath is',imgpath)
         cv2.imwrite(imgpath,resizeimg)
         n = n + 1
-#        time.sleep(0.1)
     if cv2.waitKey(1)==ord('f'):
         break
 
