@@ -10,7 +10,6 @@ while(n < 23):
     print('readpath is ',readpath)
     frame = cv2.imread(readpath)
     cv2.imshow('frame',frame)    
-#    ret,frame = cap.read()
 #    gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
 #facedetect
@@ -42,8 +41,7 @@ while(n < 23):
         print('imgpath is',imgpath)
         cv2.imwrite(imgpath,resizeimg)
         n = n + 1
-#        time.sleep(0.5)
-    #cv2.imshow('cam',frame)
+#        time.sleep(0.1)
     if cv2.waitKey(1)==ord('f'):
         break
 
