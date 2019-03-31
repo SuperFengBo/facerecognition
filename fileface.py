@@ -2,7 +2,7 @@
 import cv2
 import os
 import time
-
+#first git
 face_cascade = cv2.CascadeClassifier(r'./haarcascade_frontalface_default.xml')
 n=1
 while(n < 23):
