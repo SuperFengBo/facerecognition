@@ -65,3 +65,53 @@ while True:
     else:
         print('Finished!')
         break
+
+
+# -*- coding: utf-8 -*-
+
+import numpy as np
+import random as rdm
+from random import choice
+#-o---T
+print ('-o---T')
+def printpath(loc):
+    for i in range (5):
+        if i==loc:
+            print('o',end='')
+        else:
+            print ('-',end='')
+    print ('T')
+
+
+
+def train(initloc):    
+    rtable=[[-1,0,-1,-1,-1],
+            [0,-1,0,-1,-1],
+            [-1,0,-1,0,-1],
+            [-1,-1,0,-1,100],
+            [-1,-1,-1,0,100]
+            ]
+    r=0.8
+    qtable=[[0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0],
+            [0,0,0,0,0]]    
+    loc=initloc
+    printpath(initloc)
+    while loc!=4:
+        aList=[]
+        for i in range(5):
+            if rtable[loc][i]!=-1:
+                aList.append(i)
+        a=choice(aList)
+        printpath(a)
+        qtable[loc][a]=rtable[loc][a]+r*qtable[loc][int(np.argmax(qtable,1)[loc])]
+        loc=a
+    print (qtable)
+def app():
+    #初始化矿工位置
+    initloc=rdm.randint(0,4)
+    train(2)
+    pass
+app()
